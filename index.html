@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Love Calculator Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        h1 {
+            color: #FF4081;
+        }
+
+        label {
+            display: inline-block;
+            width: 150px;
+            text-align: right;
+            margin-right: 10px;
+        }
+
+        input[type="text"] {
+            width: 200px;
+        }
+
+        button {
+            background-color: #FF4081;
+            color: #FFFFFF;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        #lovePercentage {
+            font-size: 24px;
+            margin-top: 30px;
+        }
+
+        #message {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Love Calculator Game</h1>
+    <label for="yourName">Your Name:</label>
+    <input type="text" id="yourName">
+    <br><br>
+    <label for="partnerName">Partner's Name:</label>
+    <input type="text" id="partnerName">
+    <br><br>
+    <button onclick="calculateLove()">Calculate Love</button>
+    <div id="lovePercentage"></div>
+    <div id="message"></div>
+
+    <script>
+        function calculateLove() {
+            var yourName = document.getElementById("yourName").value;
+            var partnerName = document.getElementById("partnerName").value;
+            var lovePercentage = Math.floor(Math.random() * 101);
+
+            document.getElementById("lovePercentage").innerHTML = "Love Percentage: " + lovePercentage + "%";
+
+            var message = "";
+            if (lovePercentage >= 80) {
+                message = "Wow, " + yourName + " and " + partnerName + "! You two are meant to be together! Your love is strong.";
+            } else if (lovePercentage >= 50) {
+                message = "Great, " + yourName + " and " + partnerName + "! You have a decent love percentage. Keep nurturing your relationship.";
+            } else {
+                message = "Hmm... " + yourName + " and " + partnerName + ", your love percentage is quite low. Work on your relationship and communicate more.";
+            }
+
+            document.getElementById("message").innerHTML = message;
+        }
+    </script>
+</body>
+</html>
