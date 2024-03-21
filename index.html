@@ -46,20 +46,27 @@
             font-size: 18px;
             margin-top: 20px;
         }
+        #container{
+            width: 390px;
+            height: 240px;
+            border: 2px solid rgb(118, 72, 72);
+            border-radius: 50px;
+        }
     </style>
 </head>
 <body>
+<div id="container">
     <h1>Love Calculator Game</h1>
     <label for="yourName">Your Name:</label>
-    <input type="text" id="yourName">
+    <input type="text" id="yourName" placeholder=" Your Name">
     <br><br>
     <label for="partnerName">Partner's Name:</label>
-    <input type="text" id="partnerName">
+    <input type="text" id="partnerName" placeholder=" Partner's Name">
     <br><br>
     <button onclick="calculateLove()">Calculate Love</button>
     <div id="lovePercentage"></div>
     <div id="message"></div>
-
+</div>
     <script>
         function calculateLove() {
             var yourName = document.getElementById("yourName").value;
