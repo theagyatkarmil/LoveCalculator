@@ -7,6 +7,8 @@
             font-family: Arial, sans-serif;
             text-align: center;
             margin-top: 100px;
+            background-color: rgb(245, 191, 199);
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         }
 
         h1 {
@@ -22,6 +24,7 @@
 
         input[type="text"] {
             width: 200px;
+            border-radius: 20px;
         }
 
         button {
@@ -31,6 +34,7 @@
             font-size: 16px;
             border: none;
             cursor: pointer;
+            border-radius: 5px;
         }
 
         #lovePercentage {
@@ -60,12 +64,19 @@
         function calculateLove() {
             var yourName = document.getElementById("yourName").value;
             var partnerName = document.getElementById("partnerName").value;
-            var lovePercentage = Math.floor(Math.random() * 101);
-
+            let lovePercentage;
+            
+            if(yourName === "Versha" && partnerName ==="Abhinesh"){
+                lovePercentage = 101;
+                document.getElementById("lovePercentage").innerHTML = "Love Percentage: " + lovePercentage + "%";
+            }else{ 
+                lovePercentage = Math.floor(Math.random() * 101);
             document.getElementById("lovePercentage").innerHTML = "Love Percentage: " + lovePercentage + "%";
-
+            }
             var message = "";
-            if (lovePercentage >= 80) {
+            if (lovePercentage >100){
+                message = "Sorry Madam! Pichle Response me galti ho gayi thi \n You both are meant to be together!\n Best wishes for you. "
+            }else if (lovePercentage >= 80) {
                 message = "Wow, " + yourName + " and " + partnerName + "! You two are meant to be together! Your love is strong.";
             } else if (lovePercentage >= 50) {
                 message = "Great, " + yourName + " and " + partnerName + "! You have a decent love percentage. Keep nurturing your relationship.";
@@ -74,7 +85,8 @@
             }
 
             document.getElementById("message").innerHTML = message;
-        }
+        
+    }
     </script>
 </body>
 </html>
